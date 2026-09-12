@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate For Bangladesh</title>
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+ 	 <!-- DaisyUI CDN -->
+	 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google Fonts (Poppins) -->
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body> 
+  <!-- Nav bar style start  -->
+  
+  <div class="navbar  shadow-sm  lg:px-20 pt-5 lg:pb-12 pb-6 mb-5 sticky top-0 z-50 bg-[#faf8f5] backdrop-blur-lg ">
+  <div class="lg:navbar-start">
+        <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content  rounded-box z-1 mt-3 w-52 p-2 shadow">
+        <li>
+          <a class=" text-sm font-semibold ">Blog</a>
+          <a class=" text-sm font-semibold ">Donate Now</a>
+          
+        </li>
+       </ul>
+    </div>
+    <a class="btn btn-ghost text-xl bg-[#B4F461] px-8 py-5 font-semibold hidden  lg:flex">Blog</a>
+  </div>
+  <div class="gap-3 items-center  navbar-center lg:flex flex-row">
+    <div><img src="assets/logo.png" alt="" class="w-9"></div>
+    <div class="font-semibold text-sm lg:text-xl">Donate Bangladesh</div>
+  </div>
+  <div class="navbar-end gap-1">
+    <div><img src="assets/coin.png" alt=""></div>
+    <div class="font-[500]">5500 BDT</div>
+  </div>
+</div>
+<!-- Nav bar style end  -->
+
+<div class="container mx-auto px-96 flex justify-around mt-14">
+
+  <button id="donatation-btn" class="btn bg-[#B4F461] px-6 font-semibold">Donation</button>
+  <button id="history-btn" class="btn px-6 font-semibold text-gray-500 bg-white border">History</button>
+</div>
+<script src="js/index.js"></script>
+</body>
+</html>
