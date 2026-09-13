@@ -19,4 +19,4 @@ JavaScript - Functionality ebong dynamic behavior-er jonno
 
 🔗 Live Link
 Nijera live project-ti dekhte niche click koro:
-👉 donatebangladesh.vercel.app
+👉donatebangladesh.vercel.app
