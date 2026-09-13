@@ -9,7 +9,7 @@ function toggleButtonState(activeBtn, inactiveBtn) {
 }
 
 // সেকশন হাইড/শো করার Utility Function
-function toggleSection(showSection, hideSection) { 
+function toggleSection(showSection, hideSection) {
   showSection.classList.remove("hidden");
   hideSection.classList.add("hidden");
 }
@@ -33,58 +33,128 @@ historyBtn.addEventListener("click", function () {
   toggleSection(historySection, donateSection);
 });
 
-
-// input filed er value 
-function GetInputValueById(id){
+// input filed er value
+function GetInputValueById(id) {
   const inputValue = document.getElementById(id).value;
   const inputValueNumber = parseFloat(inputValue);
   return inputValueNumber;
 }
 
 // main balance ba innerText er value
-function GetInnerTextById(id){
+function GetInnerTextById(id) {
   const innerText = document.getElementById(id).innerText;
-  const innerTextNumber = parseFloat(innerText.replace('BDT',''));
+  const innerTextNumber = parseFloat(innerText.replace("BDT", ""));
   return innerTextNumber;
-
 }
 
-// donate for noakhali  button clicked 
-document.getElementById('NoakhaliDonate-btn').addEventListener('click',function(event){
-  event.preventDefault();
-  const donateMoney = GetInputValueById('NoakhaliDonate-amount');
-  const mainBalance = GetInnerTextById('mainAmount');
-  const NoakhaliAmount = GetInnerTextById('Noakhali-fund');
+// donate for noakhali  button clicked
+document
+  .getElementById("NoakhaliDonate-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const donateMoney = GetInputValueById("NoakhaliDonate-amount");
+    const mainBalance = GetInnerTextById("mainAmount");
+    const NoakhaliAmount = GetInnerTextById("Noakhali-fund");
 
-  if( !isNaN(donateMoney) && donateMoney > 0 ){
-  const NewMainBalance = donateMoney + mainBalance;
-  const NoakhaliNewAmount = donateMoney + NoakhaliAmount;
-  
-  document.getElementById('mainAmount').innerText = NewMainBalance + 'BDT';
-  document.getElementById('Noakhali-fund').innerText = NoakhaliNewAmount + 'BDT';
-  
+    if (!isNaN(donateMoney) && donateMoney > 0) {
+      const NewMainBalance = donateMoney + mainBalance;
+      const NoakhaliNewAmount = donateMoney + NoakhaliAmount;
 
-  const currentDate = new Date();
-  const div = document.createElement('div');
-  div.classList.add('border', 'px-6', 'py-7', 'rounded-lg');
-  div.innerHTML = `
+      document.getElementById("mainAmount").innerText = NewMainBalance + "BDT";
+      document.getElementById("Noakhali-fund").innerText =
+        NoakhaliNewAmount + "BDT";
+
+      const currentDate = new Date();
+      const div = document.createElement("div");
+      div.classList.add("border", "px-6", "py-7", "rounded-lg");
+      div.innerHTML = `
     <h2 class="font-bold text-xl"> ${donateMoney} Taka is Donated for Flood  at Noakhali,Bangladesh.</h2>
      <p class="text-[#595959]"> ${currentDate}</p>
-  `
-  document.getElementById('history-section').prepend(div);
+  `;
+      document.getElementById("history-section").prepend(div);
 
-const modal = document.getElementById('success_modal');
-    if (modal) {
-      modal.showModal();
+      // Modla section
+
+      document.getElementById("success_modal").showModal();
+
+      // ঘ) ইনপুট ফিল্ড খালি করা
+      document.getElementById("NoakhaliDonate-amount").value = "";
+    } else {
+      alert("Please Enter Positive Number");
     }
-
-  // ঘ) ইনপুট ফিল্ড খালি করা
-    document.getElementById('NoakhaliDonate-amount').value = '';
-
-  }
-else{
-  alert('Please Enter Positive Number')
-}
-})
+  });
 
 
+// donate for feni  button clicked
+document
+  .getElementById("feni-donate-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const donateMoney = GetInputValueById("FeniDonateAmount");
+    const mainBalance = GetInnerTextById("mainAmount");
+    const FeniDonateAmount = GetInnerTextById("feni-fund");
+
+    if (!isNaN(donateMoney) && donateMoney > 0) {
+      const NewMainBalance = donateMoney + mainBalance;
+      const FeniNewAmount = donateMoney + FeniDonateAmount;
+
+      document.getElementById("mainAmount").innerText = NewMainBalance + "BDT";
+      document.getElementById("feni-fund").innerText =
+        FeniNewAmount + "BDT";
+
+      const currentDate = new Date();
+      const div = document.createElement("div");
+      div.classList.add("border", "px-6", "py-7", "rounded-lg");
+      div.innerHTML = `
+    <h2 class="font-bold text-xl"> ${donateMoney} Taka is Donated for Flood  at Feni,Bangladesh.</h2>
+     <p class="text-[#595959]"> ${currentDate}</p>
+  `;
+      document.getElementById("history-section").prepend(div);
+
+      // Modla section
+
+      document.getElementById("success_modal").showModal();
+
+      // ঘ) ইনপুট ফিল্ড খালি করা
+      document.getElementById("FeniDonateAmount").value = "";
+    } else {
+      alert("Please Enter Positive Number");
+    }
+  });
+
+// donate for Quota  button clicked
+document
+  .getElementById("Quota-donate-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    const donateMoney = GetInputValueById("quotaDonateAmount");
+    const mainBalance = GetInnerTextById("mainAmount");
+    const QuotaAmount = GetInnerTextById("quota-fund");
+
+    if (!isNaN(donateMoney) && donateMoney > 0) {
+      const NewMainBalance = donateMoney + mainBalance;
+      const QuotaNewAmount = donateMoney + QuotaAmount;
+
+      document.getElementById("mainAmount").innerText = NewMainBalance + "BDT";
+      document.getElementById("quota-fund").innerText =
+        QuotaNewAmount + "BDT";
+
+      const currentDate = new Date();
+      const div = document.createElement("div");
+      div.classList.add("border", "px-6", "py-7", "rounded-lg");
+      div.innerHTML = `
+    <h2 class="font-bold text-xl"> ${donateMoney} Taka is Donated for Aid injured at Quota Movement in Bangladesh 2024.</h2>
+     <p class="text-[#595959]"> ${currentDate}</p>
+  `;
+      document.getElementById("history-section").prepend(div);
+
+      // Modla section
+
+      document.getElementById("success_modal").showModal();
+
+      // ঘ) ইনপুট ফিল্ড খালি করা
+      document.getElementById("quotaDonateAmount").value = "";
+    } else {
+      alert("Please Enter Positive Number");
+    }
+  });
